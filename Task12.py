@@ -20,10 +20,11 @@ else:
     for number_x in range(1, sum_of_numbers // 2 + 1):
         number_y = sum_of_numbers - number_x
         if number_x * number_y == product_of_numbers:
+            print(f"Первое число равно {int(number_x)}, а второе равно: {int(number_y)}")
             break
-            print(f'Первое загаданное число равно {int(number_x)}, а второе равно: {int(number_y)}')
         else:
             continue
         break
     else:
         print("Данная комбинация не соответсвует")
+
