@@ -14,12 +14,14 @@ deg = int(input('Введите в какую целую степень возв
 
 
 def get_degree(number_in, deg_in):
+    '''Функция возводит в целую степень с помощью рекурсии
+    '''
     if deg_in == 0:
         return 1
     elif deg_in == 1:
         return number_in
     elif deg_in < 0:
-        return 1 / (number_in * get_degree(number_in, abs(deg_in) - 1))
+        return 1 / number_in * get_degree(number_in, abs(deg_in) - 1)
     else:
         return number_in * get_degree(number_in, deg_in - 1)
 

@@ -17,6 +17,8 @@ number_second = int(input('Введите второе целое не отри�
 
 
 def sum_numbers(number_one_in, number_second_in):
+    '''Возвращает сумму целых чисел с помощью рекурсии
+    '''
     if number_second_in == 0:
         return number_one_in
     else:
