@@ -13,15 +13,15 @@ number = int(input('Введите число: '))
 deg = int(input('Введите в какую целую степень возводить число выше: '))
 
 
-def get_degree(number, deg):
-    if deg == 0:
+def get_degree(number_in, deg_in):
+    if deg_in == 0:
         return 1
-    elif deg == 1:
-        return number
-    elif deg < 0:
-        return 1 / (number * get_degree(number, abs(deg) - 1))
+    elif deg_in == 1:
+        return number_in
+    elif deg_in < 0:
+        return 1 / (number_in * get_degree(number_in, abs(deg_in) - 1))
     else:
-        return number * get_degree(number, deg - 1)
+        return number_in * get_degree(number_in, deg_in - 1)
 
 
 print(f'Результат возведения -  {get_degree(number, deg)}')
