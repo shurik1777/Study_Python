@@ -11,4 +11,25 @@ input_choice = 'Выберите пункт меню: '
 
 load_successful = 'Телефонная книга успешно открыта!'
 
+save_successful = 'Телефонная книга успешно сохранена!'
+
 pb_empty = 'Телефонная книга пуста или не загружена!'
+
+input_new_contact = 'Введите данные нового контакта: '
+
+new_contact = {'name': 'Введите имя: ',
+               'phone': 'Введите номер телефона: ',
+               'comment': 'Введите комментарий: '}
+
+
+def new_contact_successful(name: str):
+    return f'Контакт {name} успешно добавлен'
+
+
+input_search = 'Что будем искать: '
+input_change = 'Какой контакт будем менять: '
+change_contact = 'Введите новые данные или оставьте пустым, чтоб не менять: '
+
+
+def empty_search(word) -> str:
+    return f'Контакты содержащие слово "{word}" не найдены'
