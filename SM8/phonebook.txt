@@ -1,0 +1,1 @@
+{'Артемий': {'phone': '888222', 'email': 'kvark@mail.ru', 'address': 'Пермь'}, 'Анюта': {'phone': '89922331112', 'email': '_', 'address': 'Москва'}}
