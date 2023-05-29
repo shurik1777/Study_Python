@@ -12,6 +12,7 @@ input_choice = 'Выберите пункт меню: '
 input_index = 'Введите индекс контакта: '
 input_search = 'Что будем искать: '
 input_change = 'Какой контакт будем менять: '
+input_delete = 'Какой контакт будем удалять: '
 input_new_contact = 'Введите данные нового контакта: '
 new_contact = {'name': 'Введите имя: ',
                'phone': 'Введите номер телефона: ',
@@ -21,6 +22,16 @@ change_contact = 'Введите новые данные или оставьте
 load_successful = 'Телефонная книга успешно открыта!'
 save_successful = 'Телефонная книга успешно сохранена!'
 pb_empty = 'Телефонная книга пуста или не загружена!'
+no_saved_book = 'В телефонной книге есть не сохраненные изменения!'
+goodbye = 'Хорошего дня!'
+
+
+def delete_contact(name: str) -> str:
+    return f'Контакт {name} успешно удален!'
+
+
+def confirm_delete(name: str) -> str:
+    return f'Вы точно хотите удалить контакт {name}?'
 
 
 def new_contact_successful(name: str):

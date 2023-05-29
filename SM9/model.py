@@ -1,6 +1,6 @@
 phone_book: list[dict[str, str]] = []
 path = 'phones.txt'
-
+original_book = []
 
 def open_pb():
     global phone_book
@@ -54,3 +54,15 @@ def change_contact(new: dict, index: int) -> str:
             contact['phone'] = new.get('phone', contact.get('phone'))
             contact['comment'] = new.get('comment', contact.get('comment'))
             return contact.get('name')
+
+
+def delete_contact(index: int) -> str:
+    deleted_element = phone_book.pop(index - 1)
+    return deleted_element.get('name')
+
+
+def confirm(message: str):
+    answer = input(message + ' (Да / Нет)')
+    if answer.lower() == 'Да':
+        return True
+    return False

@@ -38,9 +38,16 @@ def start():
                     view.print_message(text.change_successful(name))
                 else:
                     view.print_message(text.empty_search(key_word))
-
-
             case 7:
-                pass
+                pb = model.get_pb()
+                view.print_contacts(pb, text.pb_empty)
+                if pb:
+                    index = view.input_index(pb, text.input_index)
+                if view.confirm(text.confirm_delete(pb[index - 1].get('name'))):
+                    view.print_message(text.delete_contact(model.delete_contact(index)))
             case 8:
+                if model.original_book != model.phone_book:
+                    if view.confirm(text.no_saved_book):
+                        model.save_pb()
+                view.print_message(text.goodbye)
                 break

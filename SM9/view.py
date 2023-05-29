@@ -38,3 +38,17 @@ def input_contact(message) -> dict[str, str]:
 
 def input_search(message) -> str:
     return input(message)
+
+
+def input_index(book: list, message: str) -> int:
+    while True:
+        choice = input(message)
+        if choice.isdigit() and 0 < int(choice) < len(book) + 1:
+            return int(choice)
+
+
+def confirm(message: str):
+    answer = input(message + ' (да / нет) -> ')
+    if answer.lower() == 'да':
+        return True
+    return False
