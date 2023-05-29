@@ -2,6 +2,7 @@ phone_book: list[dict[str, str]] = []
 path = 'phones.txt'
 original_book = []
 
+
 def open_pb():
     global phone_book
     with open(path, 'r', encoding='UTF-8') as file:
@@ -17,7 +18,7 @@ def save_pb():
     global phone_book
     data = []
     for contact in phone_book:
-        data.append(':'.join([value for value in contact.values()]))
+        data.append(':'.join([contact['id'], contact['name'], contact['phone'], contact['comment']]))
     data = '\n'.join(data)
     with open(path, 'w', encoding='UTF-8') as file:
         file.write(data)
