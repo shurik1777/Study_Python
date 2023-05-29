@@ -18,8 +18,9 @@ def print_message(message: str):
 def print_contacts(book: list[dict[str, str]], error: str):
     if book:
         print('\n' + '=' * 71)
-        for i, contact in enumerate(book, 1):
-            print(f'{i:>3}. {contact.get("name"):<20} | {contact.get("phone"):^20} | {contact.get("comment"):<20}')
+        for contact in book:
+            print(f'{contact.get("id"):>3}. {contact.get("name"):<20}'
+                  f' | {contact.get("phone"):^20} | {contact.get("comment"):<20}')
         print('=' * 71 + '\n')
     else:
         print_message(error)
@@ -29,9 +30,11 @@ def input_contact(message) -> dict[str, str]:
     new = {}
     print(message)
     for key, txt in text.new_contact.items():
-        new[key] = input(txt)
+        value = input(txt)
+        if value:
+            new[key] = value
     return new
 
-def input_serch(message) -> str:
-    return input(message)
 
+def input_search(message) -> str:
+    return input(message)
