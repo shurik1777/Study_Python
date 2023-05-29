@@ -10,6 +10,7 @@ def open_pb():
         contact = contact.strip().split(':')
         new = {'id': contact[0], 'name': contact[1], 'phone': contact[2], 'comment': contact[3]}
         phone_book.append(new)
+        original_book.append(new)
 
 
 def save_pb():
@@ -62,7 +63,7 @@ def delete_contact(index: int) -> str:
 
 
 def confirm(message: str):
-    answer = input(message + ' (Да / Нет)')
-    if answer.lower() == 'Да':
+    answer = input(message + ' (да / нет) -> ')
+    if answer.lower() == 'да':
         return True
     return False
